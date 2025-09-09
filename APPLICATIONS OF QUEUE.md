@@ -1,12 +1,8 @@
 # Exp.No:40  
 ## APPLICATIONS OF QUEUE
 
----
-
 ### AIM  
 To write a Python program to implement CPU Process Scheduling using a queue.
-
----
 
 ### ALGORITHM  
 
@@ -27,16 +23,48 @@ To write a Python program to implement CPU Process Scheduling using a queue.
 13. Call `CalculateWaitingTime()` with `at`, `bt`, and `N`.  
 14. End the program.
 
----
 
 ### PROGRAM  
 
 ```
+Reg.No: 212222060126
+Name: kristipati shivani
 
+def CalculateWaitingTime(at, bt, N):
+	wt = [0]*N;
+
+	wt[0] = 0;
+
+	print("P.No.\tArrival Time\t" , "Burst Time\tWaiting Time");
+	print("1" , "\t\t" , at[0] , "\t\t" , bt[0] , "\t\t" , wt[0]);
+
+	for i in range(1,5):
+		wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i];
+
+		print(i + 1 , "\t\t" , at[i] , "\t\t" , bt[i] , "\t\t" , wt[i]);
+
+	average = 0.0;
+	sum = 0;
+
+	for i in range(5):
+		sum = sum + wt[i];
+
+	average = sum / 5;
+
+	print("Average waiting time = " , average);
+N = 5;
+at = [ 0, 1, 2, 3, 4 ];
+
+bt=[]
+for i in range(0, 5):
+    ele = int(input())
+    bt.append(ele)
+CalculateWaitingTime(at, bt, N);
 ```
 
 ### OUTPUT
-
+<img width="1070" height="480" alt="image" src="https://github.com/user-attachments/assets/02d89d52-38d0-4fb8-a8f7-b93b40602446" />
 
 ### RESULT
+Thus the Python program to implement CPU Process Scheduling using a queue implemented and executed successfully.
 
